@@ -1,1 +1,5 @@
+# exclude everything
 mysql/*
+
+# exception to the rule
+!mysql/.gitkeep 
