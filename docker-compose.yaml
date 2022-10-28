@@ -7,12 +7,12 @@ services:
       dockerfile: Dockerfile
     container_name: app
     entrypoint: "dockerize -wait tcp://db:3306 -timeout 60s docker-entrypoint.sh"
-    command: npx nodemon index.js
-    restart: always
+    command: node index.js
     networks: 
       - node_network
     volumes:
       - ./node:/usr/src/app
+      - /usr/src/app/node_modules
     tty: true
     depends_on:
       - db
